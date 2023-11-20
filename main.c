@@ -46,6 +46,7 @@ int main(int argc, char **argv)
         sprintf(cmd, "return %s", buf);
         luaL_dostring(L, cmd);
         printf("result : %.2f\n", lua_tonumber(L, -1));
+        lua_pop(L, 1);
     }
 
     lua_close(L);
